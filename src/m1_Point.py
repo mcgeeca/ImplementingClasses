@@ -48,6 +48,9 @@ class Point(object):
         self.x = x
         self.y = y
         self.n = 0
+        self.inital_position_y = y
+        self.inital_position_x = x
+        self.sum_of_distances = 0
 
     def __repr__(self):
         return "Point({}, {}".format(self.x, self.y)
@@ -72,7 +75,7 @@ class Point(object):
         return math.sqrt((Point.y - self.y)**2 + (Point.x - self.x)**2)
 
     def get_distance_from_start(self):
-        return math.sqrt((self.y )**2 + (self.x )**2)
+        return math.sqrt((self.y - self.inital_position_y)**2 + (self.x - self.inital_position_x)**2)
 
     def get_distance_traveled(self):
         return
@@ -802,7 +805,7 @@ def run_test_get_distance_from_start():
         print('Actually is:', p2.get_distance_from_start())
     """
     # ------------------------------------------------------------------
-    # TODO: 10.  Follow the same instructions as in TODO 3 above,
+    # DONE: 10.  Follow the same instructions as in TODO 3 above,
     #    but for the  get_distance_from_START  method specified above.
     # ------------------------------------------------------------------
     print()
